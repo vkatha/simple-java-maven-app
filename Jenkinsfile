@@ -1,14 +1,9 @@
 pipeline {
-    agent {
-        docker {
-            sh ' docker pull maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
-        }
-    }
+    agent
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                sh 'docker ps -a'
             }
         }
     }
