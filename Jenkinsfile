@@ -3,7 +3,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'docker ps -a'
+                sh '''
+                docker ps -a
+                '''
             }
         }
     }
