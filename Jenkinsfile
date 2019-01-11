@@ -1,11 +1,15 @@
 pipeline {
-    agent {
-        docker{
-            image 'node:6-alpine'
-        }
+    agent{
+        label 'dockerserver'
     }
     stages{
         stage('build'){
+            agent{
+                docker{
+                label 'dockerserver'
+                image 'node:6-alpine'
+                }
+            }
             steps{
                 sh ' echo " installing node"'
             }
