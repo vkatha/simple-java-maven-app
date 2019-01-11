@@ -11,6 +11,7 @@ pipeline {
                 sh ' echo " running docker command" '
                 sh '''
                 cd /Users/vkatha
+                pwd
                 docker ps -a
                 '''
 
