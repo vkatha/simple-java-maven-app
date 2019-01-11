@@ -4,7 +4,7 @@ pipeline {
         stage('build'){
             steps{
                 sh ' echo " running docker command" '
-                    'docker ps -a'
+                 sh 'docker ps -a'
 
             }
         }
