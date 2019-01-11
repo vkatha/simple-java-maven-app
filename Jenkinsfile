@@ -7,7 +7,10 @@ pipeline {
         }
             steps{
                 sh ' echo " running docker command" '
-                 sh 'docker ps -a'
+                sh '''
+                cd /Users/vkatha
+                docker ps -a
+                '''
 
             }
         }
