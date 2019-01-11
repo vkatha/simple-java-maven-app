@@ -15,7 +15,7 @@ pipeline {
                 #!/usr/bin/env bash -l
                 cd /Users/vkatha
                 pwd
-                docker ps -a
+                sudo docker ps -a
                 '''
 
             }
