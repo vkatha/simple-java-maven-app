@@ -1,27 +1,15 @@
-#! /usr/bin -l
-
-pipeline {
-    agent{
-        label 'master'
+pipeline{
+    agent {
+        docker{
+            image 'node:6-alpine'
+            args '-p 3000:3000'
+        }
     }
     stages{
-        stage('build'){
-        agent{
-            label 'master'
-        }
+        stage('Build'){
             steps{
-                sh ' echo " running docker command" '
-                sh '''
-                #!/usr/bin/env bash -l
-                cd /Users/vkatha
-                pwd
-                ps -ef |grep docker
-                docker ps -a
-                '''
-
+                sh 'install npm'
             }
         }
     }
-
-
 }
